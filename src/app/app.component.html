@@ -1,0 +1,23 @@
+<header id="header"><p>Video player</p></header>
+
+<div id="container">
+
+  <main id="center" class="column">			
+      <router-outlet ></router-outlet>
+  </main>
+
+  <nav id="left" class="column">
+      <router-outlet name="routerLeft"></router-outlet>
+  </nav>
+
+  <div id="right" class="column">
+      <router-outlet name="routerRight"></router-outlet>
+  </div>
+
+</div>
+
+<div id="footer-wrapper">
+  <footer id="footer"><p>ver: 0.1@alpha</p></footer>
+</div>
+
+

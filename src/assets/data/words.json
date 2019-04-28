@@ -1,0 +1,14 @@
+[
+    { "Id": 1,
+        "English": "go",
+        "PolishLong": "iść",
+        "SentenceId": null,
+        "Type": "Verb",
+        "Added": null },
+    { "Id": 2,
+        "English": "foe",
+        "PolishLong": "wróg",
+        "SentenceId": null,
+        "Type": "Noun",
+        "Added": null }
+]

@@ -1,0 +1,25 @@
+GET http://localhost:49495/api/Users/ HTTP/1.1
+
+###
+
+POST http://localhost:49495/api/Users/authenticate HTTP/1.1
+content-type: application/json
+
+{
+       "Username" : "test0",
+        "Password" : "test"
+}
+
+###
+
+GET http://localhost:49495/api/Player/ HTTP/1.1
+Authorization : Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjEiLCJuYmYiOjE1NDA4NTA4ODksImV4cCI6MTU0MTQ1NTY4OSwiaWF0IjoxNTQwODUwODg5fQ.liCMH3HFTWNJGmloiAtQehZu8RLSNmQGBRcBBPTMVTU
+
+###
+
+get https://logitainment.pl/js/vendor.js
+content-type: strzelam se z restclienta
+###
+
+get https://logitainment.pl/media/vuln.txt 
+content-type: strzelam se z restclienta

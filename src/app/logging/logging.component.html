@@ -1,0 +1,34 @@
+<div *ngIf="!isLogged; then thenBlock; else elseBlock"></div>
+
+<ng-template #thenBlock>
+    <div class="ui-g ui-fluid">
+<div class="ui-g-12 ui-md-4">
+  <div class="ui-inputgroup">
+    <table>
+      <tr>
+        <td>
+            <p>Login</p>            
+            <input [(ngModel)]="login" type="text" pInputText placeholder="Username"/>
+        </td>
+      </tr>
+      <tr>
+          <td>
+                <p>Hasło</p>    
+              <input [(ngModel)]="pass" type="password" pPassword feedback="false" />
+          </td>
+        </tr>
+        <tr>
+            <td>
+                <button pButton type="button" label="Log in" (click)="TryLogIn()"></button>
+            </td>
+          </tr>
+    </table>                  
+  </div>
+  </div>
+</div>
+</ng-template>
+
+
+<ng-template #elseBlock>
+    <button pButton type="button" label="Logout" (click)="TryLogout()"></button> 
+</ng-template>
