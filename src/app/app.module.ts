@@ -24,8 +24,10 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from './Service/token.interceptor';
 import { SelectedFilmService } from './Service/selectedfilm.service';
 import { WeblibModuleModule } from './weblib-module/weblib-module.module';
-import { AuthGuardService } from './weblib-module/auth/auth-guard.service';
-import { AuthService } from './weblib-module/auth/auth.service';
+// import { AuthGuardService } from './weblib-module/auth/auth-guard.service';
+// import { AuthService } from './weblib-module/auth/auth.service';
+import { AuthGuardService } from './Service/auth-guard.service';
+import { AuthService } from './Service/auth.service';
 
 export function tokenGetter() {
   return localStorage.getItem('access_token');
