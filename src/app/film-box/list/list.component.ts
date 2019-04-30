@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FilmsService } from '../../Service/film.service';
-import { IFilm } from '../../film-box/Model/IFilm';
-import { SelectedFilmService } from '../../Service/selectedfilm.service';
+import { FilmsService } from '../films.service';
+import { IFilm } from '../Model/IFilm';
+import { SelectedFilmService } from '../selected-film.service';
 
 @Component({
   selector: 'app-list',

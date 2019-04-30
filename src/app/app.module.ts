@@ -19,15 +19,17 @@ import { WordService } from './words.service';
 import { FilmsService } from './Service/film.service';
 import { JwtModule } from '@auth0/angular-jwt';
 import {DataViewModule} from 'primeng/dataview';
-// import { AuthGuardService as AuthGuard } from './weblib-module/auth/auth-guard.service';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { TokenInterceptor } from './Service/token.interceptor';
+import { TokenInterceptor } from './weblib-module/auth/token-interceptor';
 import { SelectedFilmService } from './Service/selectedfilm.service';
 import { WeblibModuleModule } from './weblib-module/weblib-module.module';
 // import { AuthGuardService } from './weblib-module/auth/auth-guard.service';
 // import { AuthService } from './weblib-module/auth/auth.service';
-import { AuthGuardService } from './Service/auth-guard.service';
-import { AuthService } from './Service/auth.service';
+// import { AuthGuardService } from './Service/auth-guard.service';
+// import { AuthService } from './Service/auth.service';
+// import { PlayerComponent } from './film-box/player/player.component';
+
+import { FilmBoxModule } from './film-box/film-box.module';
 
 export function tokenGetter() {
   return localStorage.getItem('access_token');
@@ -40,7 +42,8 @@ export function tokenGetter() {
     ListComponent,
  routingComponents,
 IndexComponent,
-WordComponent
+WordComponent,
+// PlayerComponent
   ],
   imports: [
     AppRoutingModule,
@@ -58,12 +61,14 @@ WordComponent
       config: {
         tokenGetter: tokenGetter,
         whitelistedDomains: ['localhost:3001'],
-        blacklistedRoutes: ['localhost:3001/auth/']
+        blacklistedRoutes: ['localhost:3001/auth/'],
       }
     }),
-    WeblibModuleModule
+    WeblibModuleModule.forRoot(),
+    FilmBoxModule
   ],
-  providers: [WordService, FilmsService, AuthService, AuthGuardService, SelectedFilmService, {
+  // AuthService, AuthGuardService,
+  providers: [WordService, FilmsService, SelectedFilmService, {
     provide: HTTP_INTERCEPTORS,
     useClass: TokenInterceptor,
     multi: true

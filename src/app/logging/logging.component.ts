@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Router, Routes } from '@angular/router';
-import { AuthService } from '../Service/auth.service';
+import {  AuthService } from '../weblib-module/auth/auth.service';
 import { JwtHelperService } from '@auth0/angular-jwt';
 
 @Component({
