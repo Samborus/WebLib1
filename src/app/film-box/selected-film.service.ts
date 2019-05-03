@@ -1,7 +1,9 @@
 import { Injectable, Output, EventEmitter } from '@angular/core';
-import { IFilm } from '../Model/IFilm';
+import { IFilm } from './Model/IFilm';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class SelectedFilmService {
 
   isOpen = false;
