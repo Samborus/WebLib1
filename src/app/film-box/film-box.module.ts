@@ -5,13 +5,15 @@ import { ListComponent } from './list/list.component';
 import { FilmsService } from './films.service';
 import { PlayerComponent } from './player/player.component';
 import { SelectedFilmService } from './selected-film.service';
+import {ButtonModule} from 'primeng/button';
 
 @NgModule({
-  declarations: [ListComponent],
+  declarations: [ListComponent, PlayerComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    ButtonModule
   ],
-  exports: [ListComponent]
+  exports: [ListComponent, PlayerComponent]
 })
 export class FilmBoxModule {
   static forRoot(): ModuleWithProviders {

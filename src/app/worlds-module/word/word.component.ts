@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IWord } from 'src/app/Model/Word';
+import { IWord } from '../Model/Word';
 
 
 @Component({

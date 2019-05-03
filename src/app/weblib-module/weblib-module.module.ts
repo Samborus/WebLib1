@@ -4,14 +4,29 @@ import { AuthService } from './auth/auth.service';
 import { AuthGuardService } from './auth/auth-guard.service';
 import { TokenInterceptor } from './auth/token-interceptor';
 import { JWTResponse } from './auth/jwt-response';
+import { LoggingComponent } from './auth/logging/logging.component';
+import {ButtonModule} from 'primeng/button';
+import {PanelModule } from 'primeng/panel';
+import {PasswordModule} from 'primeng/password';
+import { CalendarModule, SharedModule} from 'primeng/primeng';
+import {DataViewModule} from 'primeng/dataview';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [],
-  imports: [
-    CommonModule
+  declarations: [
+    LoggingComponent
   ],
-  // providers: [AuthService, AuthGuardService, TokenInterceptor],
+  imports: [
+    CommonModule,
+    ButtonModule,
+    PanelModule,
+    PasswordModule,
+    SharedModule,
+    DataViewModule,
+    FormsModule
+  ],
   exports: [
+    LoggingComponent
   ]
 })
 export class WeblibModuleModule {
