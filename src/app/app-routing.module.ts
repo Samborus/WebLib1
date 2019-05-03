@@ -1,20 +1,19 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { WordComponent } from './word/word.component';
-import { IndexComponent } from './index/index.component';
-import {FieldsetModule, } from 'primeng/fieldset';
-import {CardModule} from 'primeng/card';
+import { WordComponent } from './worlds-module/word/word.component';
+import { IndexComponent } from './web-components-module/index/index.component';
+import { FieldsetModule } from 'primeng/fieldset';
+import { CardModule } from 'primeng/card';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {InputTextareaModule} from 'primeng/inputtextarea';
-import { ListComponent } from './tools/list/list.component';
-import { ToolsModule } from './tools/tools.module';
-import {DataViewModule} from 'primeng/dataview';
-import { AuthGuardService as AuthGuard } from './Service/auth-guard.service';
-import { LoggingComponent } from './logging/logging.component';
-import { PlayerComponent } from './tools/player/player.component';
-
+import { InputTextareaModule } from 'primeng/inputtextarea';
+import { DataViewModule } from 'primeng/dataview';
+import { LoggingComponent } from './weblib-module/auth/logging/logging.component';
+import { PlayerComponent } from './film-box/player/player.component';
+import { ListComponent } from './film-box//list/list.component';
+import { AuthGuardService } from './weblib-module/auth/auth-guard.service';
+import { WebComponentsModuleModule } from './web-components-module/web-components-module.module';
 const routes: Routes = [
-  { path: 'list',  canActivate: [AuthGuard], children: [
+  { path: 'list',  canActivate: [AuthGuardService], children: [
     {
         path: '',
         component: ListComponent,
@@ -26,7 +25,7 @@ const routes: Routes = [
         outlet: 'routerRight'
     }
   ]  },
-  { path: 'player', canActivate: [AuthGuard],
+  { path: 'player', canActivate: [AuthGuardService],
   children: [
     {
       path: '',
@@ -54,9 +53,13 @@ const routes: Routes = [
   ];
 
 @NgModule({
-  imports: [ RouterModule.forRoot(routes) ],
+  imports: [ RouterModule.forRoot(routes), WebComponentsModuleModule ],
   exports: [ RouterModule, FieldsetModule, CardModule, BrowserAnimationsModule,
-    InputTextareaModule, ToolsModule, DataViewModule ]
+    InputTextareaModule, DataViewModule ]
 })
-export class AppRoutingModule { }
-export const routingComponents = [ WordComponent, IndexComponent ];
+export class AppRoutingModule {
+  constructor(private service: AuthGuardService) {
+    // using of the injected service
+ }
+ }
+export const routingComponents = [ WordComponent ];

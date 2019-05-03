@@ -1,6 +1,6 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
-import { IFilm } from '../../Model/IFilm';
-import { SelectedFilmService } from '../../Service/selectedfilm.service';
+import { IFilm } from '../Model/IFilm';
+import { SelectedFilmService } from '../selected-film.service';
 
 @Component({
   selector: 'app-player',
